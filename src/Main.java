@@ -39,4 +39,14 @@ public class Main {
         System.out.println("6 - Salir");
         return teclado.nextInt();
     }
+
+    String grupo;
+    public String getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(String grupo){
+        this.grupo=grupo;
+    }
+
 }
