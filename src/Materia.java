@@ -17,14 +17,21 @@ public class Materia {
     }
 
     public int getId() {
+
         return id;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre)
+
+    {
         this.nombre = nombre;
     }
 
     public void setNumeroId(int id) {
         this.id = id;
+    }
+
+    public String toString() {
+        return "Materia" + "id:" + id + ", nombre:'" + nombre + '\'' ;
     }
 }
