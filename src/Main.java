@@ -36,6 +36,7 @@ public class Main {
                 case 4:
                     altaMateria();
                     break;
+
                 case 5:
                     altaGrupo();
                     break;
@@ -86,6 +87,7 @@ public class Main {
             }
         } while (opc != 7);
 
+        }while (op1!=4);
     }
 
     public static int menu() {
@@ -102,6 +104,26 @@ public class Main {
         opcion = scan.nextInt();
         return opcion;
     }
+
+    // - - - - - - - - - - - - -
+
+    public static void altaAlumno(){
+        String nombre;
+        int numcontrol;
+        System.out.println("\n- Alta Alumno -\n");
+        System.out.print("Num. Control Alumno");
+        numcontrol=scan.nextInt();
+        System.out.print("Nombre del Alumno");
+        nombre=text.nextLine();
+        alumnos.addElement(new Alumno(nombre, numcontrol));
+    }
+    public static void impAlu(){
+        System.out.println("\n=== Registro de Alumnos ===\n");
+        for(int i=0; i<alumnos.size(); i++){
+            alumnos.elementAt(i).imprimir();
+        }
+    }
+
     // - - - - - - - - - - - - -
     public static void altaGrupo(){
         String clave;
@@ -122,6 +144,26 @@ public class Main {
             grupos.elementAt(i).imprimir();
         }
     }
+
+    // - - - - - - - - - - - - -
+
+    public static void altaMateria(){
+        int id;
+        String nombre;
+        System.out.println("\n- Alta Materia -\n");
+        System.out.print("Id de la materia: ");
+        id=scan.nextInt();
+        System.out.print("Nombre de la materia: ");
+        nombre=text.nextLine();
+        materias.addElement(new Materia(id,nombre));
+    }
+    public static void impMat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<materias.size(); i++){
+            materias.elementAt(i).imprimir();
+        }
+    }
+
     // - - - - - - - - - - - - -
 
 }
