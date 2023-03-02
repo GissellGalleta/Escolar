@@ -10,20 +10,19 @@ public class Main {
     static int aid = 0;
     static String nombre;
 
-    public static Vector<Grupo> grupos = new Vector<Grupo>();
-    public static Vector<Especialidad> especialidades = new Vector<Especialidad>();
-    public static Vector<Alumno> alumnos = new Vector<Alumno>();
-    public static Vector<Catedratico> catedraticos = new Vector<Catedratico>();
-    public static Vector<Materia> materias = new Vector<Materia>();
+    public static Vector<Grupo>grupos = new Vector<Grupo>();
+    public static Vector<Especialidad>especialidades = new Vector<Especialidad>();
+    public static Vector<Alumno>alumnos = new Vector<Alumno>();
+    public static Vector<Catedratico>catedraticos = new Vector<Catedratico>();
+    public static Vector<Materia>materias = new Vector<Materia>();
 
     Especialidad especialidadObj = new Especialidad();
-
     public static void main(String[] args) {
         int opc = 0;
         do {
             opc = menu();
 
-            switch (opc) {
+            switch (opc){
                 case 1:
                     altaEspecialidad();
                     break;
@@ -47,9 +46,9 @@ public class Main {
                     System.out.println("3.- Catedratico");
                     System.out.println("4.- Materia ");
                     System.out.println("5.- Grupo");
-                    opc = scan.nextInt();
+                    opc=scan.nextInt();
 
-                    switch (opc) {
+                    switch(opc){
                         case 1:
                             impEsp();
                             System.out.println("\n");
@@ -84,12 +83,11 @@ public class Main {
                     System.out.println("...Opcion no valida !");
                     break;
             }
-        } while (opc != 7);
+        }while (opc != 7);
 
     }
-
-    public static int menu() {
-        int opcion = 0;
+    public static int menu(){
+        int opcion=0;
         System.out.println("\nMENU PRINCIPAL\n");
         System.out.println("1.- Alta especialidad");
         System.out.println("2.- Alta alumno");
@@ -101,6 +99,25 @@ public class Main {
         System.out.print("\n Seleccione la opcion deseada: ");
         opcion = scan.nextInt();
         return opcion;
+    }
+
+    // - - - - - - - - - - - - -
+
+    public static void altaEspecialidad(){
+        int id;
+        String nombre;
+        System.out.println("- Alta especialidad -");
+        System.out.print("Clave especialidad:");
+        id=scan.nextInt();
+        System.out.print("Nombre de la especialidad:");
+        nombre=text.nextLine();
+        especialidades.addElement(new Especialidad(id,nombre));
+    }
+    public static void impEsp(){
+        System.out.println("\n=== Registro de Especialidades ===\n");
+        for(int i=0; i<especialidades.size(); i++){
+            especialidades.elementAt(i).imprimir();
+        }
     }
 
     // - - - - - - - - - - - - -
@@ -123,23 +140,21 @@ public class Main {
     }
 
     // - - - - - - - - - - - - -
-    public static void altaGrupo(){
-        String clave;
-        int hora;
-        int salon;
-        System.out.println("\n- Alta Grupo -\n");
-        System.out.print("Clave del grupo: ");
-        clave=scan.nextLine();
-        System.out.print("Horario del grupo: ");
-        hora=text.nextInt();
-        System.out.println("Salon:");
-        salon=text.nextInt();
-        grupos.addElement(new Grupo(clave, hora, salon));
+
+    public static void altaCatedratico(){
+        String RFC;
+        String nombre;
+        System.out.println("\n- Alta Catedratico -\n");
+        System.out.print("RFC Catedratico: ");
+        RFC=scan.nextLine();
+        System.out.print("Nombre del Catedratico: ");
+        nombre=text.nextLine();
+        catedraticos.addElement(new Catedratico(RFC, nombre));
     }
-    public static void impGru(){
-        System.out.println("\n=== Registro de Grupo ===\n");
-        for(int i=0; i<grupos.size(); i++){
-            grupos.elementAt(i).imprimir();
+    public static void impCat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<catedraticos.size(); i++){
+            catedraticos.elementAt(i).imprimir();
         }
     }
 
@@ -164,4 +179,25 @@ public class Main {
 
     // - - - - - - - - - - - - -
 
+    public static void altaGrupo(){
+        String clave;
+        int hora;
+        int salon;
+        System.out.println("\n- Alta Grupo -\n");
+        System.out.print("Clave del grupo: ");
+        clave=scan.nextLine();
+        System.out.print("Horario del grupo: ");
+        hora=text.nextInt();
+        System.out.println("Salon:");
+        salon=text.nextInt();
+        grupos.addElement(new Grupo(clave, hora, salon));
+    }
+    public static void impGru(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<grupos.size(); i++){
+            grupos.elementAt(i).imprimir();
+        }
+    }
+
+    // - - - - - - - - - - - - -
 }
