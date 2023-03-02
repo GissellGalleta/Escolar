@@ -142,6 +142,26 @@ public class Main {
             grupos.elementAt(i).imprimir();
         }
     }
+
+    // - - - - - - - - - - - - -
+
+    public static void altaMateria(){
+        int id;
+        String nombre;
+        System.out.println("\n- Alta Materia -\n");
+        System.out.print("Id de la materia: ");
+        id=scan.nextInt();
+        System.out.print("Nombre de la materia: ");
+        nombre=text.nextLine();
+        materias.addElement(new Materia(id,nombre));
+    }
+    public static void impMat(){
+        System.out.println("\n=== Registro de Especialidad ===\n");
+        for(int i=0; i<materias.size(); i++){
+            materias.elementAt(i).imprimir();
+        }
+    }
+
     // - - - - - - - - - - - - -
 
 }
