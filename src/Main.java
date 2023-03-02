@@ -1,7 +1,12 @@
+
+import java.util.Scanner;
+public class Main {
+
 //import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Vector;
+
 
 
 public class Main {
